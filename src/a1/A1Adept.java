@@ -75,7 +75,6 @@ public class A1Adept {
 				
 			}
 			averageNum += sumOfPayment;
-			System.out.println(averageNum);
 
 			// if statement for Biggest
 			if (sumOfPayment > prevNum) {
