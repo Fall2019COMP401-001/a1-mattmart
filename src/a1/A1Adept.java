@@ -7,11 +7,11 @@ public class A1Adept {
 	public static void main(String[] args) {
 		
 		Scanner scan = new Scanner(System.in);
-
+		
 		// Your code follows here.
 		
 		double averageNum = 0;
-		
+		double avgNum = 0;
 
 		double prevNum = 0;
 		double prevNum2 = 999999999; 
@@ -53,7 +53,7 @@ public class A1Adept {
 			int numOfItemsBought = scan.nextInt();
 			double sumOfPayment = 0;
 			double tempAvgNum = 0;
-			
+			double avgden = 0;
 			
 		
 		// for loop for number of items bought for each customer
@@ -69,16 +69,14 @@ public class A1Adept {
 					if (itemName.equals(itemNames[y])) {
 					double sum = numOfItem * priceOfItems[y];
 					sumOfPayment += sum;
+					
 					}
-				
 				}
 				
 			}
-			
-			tempAvgNum = sumOfPayment / numOfItems;
-			averageNum += tempAvgNum * 2;
-			
-			
+			averageNum += sumOfPayment;
+			System.out.println(averageNum);
+
 			// if statement for Biggest
 			if (sumOfPayment > prevNum) {
 				maxNum = sumOfPayment;
@@ -95,12 +93,12 @@ public class A1Adept {
 				prevNum2 = sumOfPayment;
 			}
 			
-			
+			avgNum = averageNum / numOfCustomers;
 			// System.out.println(fName + " " + lName +  " (" + String.format("%.2f",maxNum) + ")");
 		}
 		System.out.println("Biggest: " + maxFName + " " + maxLName +  " (" + String.format("%.2f",maxNum) + ")");
 		System.out.println("Smallest: " + smallFName + " " + smallLName +  " (" + String.format("%.2f",smallNum) + ")");
-		System.out.println("average: " + String.format("%.2f", averageNum));
+		System.out.println("average: " + String.format("%.2f", avgNum));
 			
 		scan.close();
 		
