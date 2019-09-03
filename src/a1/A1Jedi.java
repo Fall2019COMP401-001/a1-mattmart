@@ -19,6 +19,7 @@ public class A1Jedi {
 				int[] itemsBought = new int [numOfItems];
 				int[] customersUsed = new int [numOfItems];
 				
+				
 				// setting up arrays
 				for (int i = 0; i < numOfItems; i++) {
 					itemNames[i] = scan.next();
@@ -34,8 +35,13 @@ public class A1Jedi {
 						
 				for (int a = 0; a < numOfCustomers; a++) {
 					
+					int[] itemNameCount = new int [numOfItems];
 					
-				
+					for (int i = 0; i < numOfItems; i++) {
+						itemNameCount[i] = 0;
+					}
+					
+					
 				// customer first and last name
 				
 					String fName = scan.next();
@@ -43,7 +49,6 @@ public class A1Jedi {
 				
 				
 					int numOfItemsBought = scan.nextInt();
-					int manyCust = 0;
 					
 					
 				
@@ -53,16 +58,16 @@ public class A1Jedi {
 					
 						int numOfItem = scan.nextInt();
 						String itemName = scan.next();
-						
 					
 				// for loop to find where item name equals array value
 					
 						for (int y = 0; y < numOfItems; y++) {
 							if (itemName.equals(itemNames[y])) {
 								itemsBought[y] += numOfItem;
-								manyCust += numOfItem;
-								customersUsed[y]++;
-							} else {
+								if (itemNameCount[y] < 1) {
+									customersUsed[y]++;
+									itemNameCount[y]++;
+								}
 								
 							}
 						
@@ -71,11 +76,12 @@ public class A1Jedi {
 					}
 					
 					
+					
 				}
 				
 				for (int y = 0; y < numOfItems; y++) {
 					if (customersUsed[y] == 0) {
-						System.out.println("No customers bought Apple");
+						System.out.println("No customers bought " + itemNames[y]);
 						} else {
 							System.out.println(customersUsed[y] + " customers bought " + itemsBought[y] + " " + itemNames[y]);
 						}
