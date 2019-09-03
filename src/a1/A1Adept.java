@@ -14,7 +14,7 @@ public class A1Adept {
 		double avgNum = 0;
 
 		double prevNum = 0;
-		double prevNum2 = 999999999; 
+		double prevNum2 = 999999991; 
 		
 		double maxNum = 0;
 		String maxFName = "";
@@ -72,6 +72,7 @@ public class A1Adept {
 					
 					}
 				}
+				
 				
 			}
 			averageNum += sumOfPayment;
